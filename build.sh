@@ -28,6 +28,7 @@ cmake -DCMAKE_INSTALL_PREFIX=${install_dir} \
       -DCMAKE_CXX_FLAGS=${CXXFLAGS} \
       -DCMAKE_VERBOSE_MAKEFILE=On \
       -G "Ninja" \
+      --trace \
       ..
 
 if [ $? -ne 0 ] ; then
@@ -50,3 +51,4 @@ fi
 
 
 # ----------------------------------------------------
+p
