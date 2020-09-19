@@ -22,8 +22,11 @@ ExternalProject_Add(
   mbedtls
   GIT_REPOSITORY https://github.com/ARMmbed/mbedtls.git
   UPDATE_COMMAND ""
-  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR> -DENABLE_TESTING=Off  -DENABLE_PROGRAMS=Off
+  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR> -DENABLE_TESTING=OFF  -DENABLE_PROGRAMS=OFF
   BUILD_BYPRODUCTS <INSTALL_DIR>/${mbedtls_lib_file} <INSTALL_DIR>/${mbedx_lib_file} <INSTALL_DIR>/${mbedcrypto_lib_file}
+  BUILD_COMMAND ninja
+  INSTALL_COMMAND ninja install
+  STEP_TARGETS build install
   )
 
 ExternalProject_Get_Property(mbedtls install_dir)
