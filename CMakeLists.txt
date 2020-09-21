@@ -35,6 +35,8 @@ set(mbedtls_inc_dir ${mbedtls_install_dir}/include/)
 set(mbedtls_lib_dir ${mbedtls_install_dir}/lib/)
 include_directories(${mbedtls_inc_dir})
 
+message(STATUS "mbedtls inc dir ${mbedtls_inc_dir}")
+
 list(APPEND my_libs
   ${mbedtls_install_dir}/${mbedx_lib_file}
   ${mbedtls_install_dir}/${mbedtls_lib_file}
