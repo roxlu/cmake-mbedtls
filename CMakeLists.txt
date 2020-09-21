@@ -57,5 +57,6 @@ list(APPEND sources
   )
 
 add_library(monkies STATIC ${sources})
+add_dependencies(monkies ${my_deps})
 
 # -----------------------------------------------------------------

@@ -19,7 +19,8 @@ export CXX=/usr/bin/clang++
 export CXXFLAGS="--stdlib=libc++"
 
 # ----------------------------------------------------
-
+# --trace \
+    
 cd ${build_dir}
 cmake -DCMAKE_INSTALL_PREFIX=${install_dir} \
       -DCMAKE_BUILD_TYPE=Release \
@@ -28,7 +29,6 @@ cmake -DCMAKE_INSTALL_PREFIX=${install_dir} \
       -DCMAKE_CXX_FLAGS=${CXXFLAGS} \
       -DCMAKE_VERBOSE_MAKEFILE=On \
       -G "Ninja" \
-      --trace \
       ..
 
 if [ $? -ne 0 ] ; then
@@ -51,4 +51,4 @@ fi
 
 
 # ----------------------------------------------------
-p
+
